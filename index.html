@@ -17,7 +17,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Tailwind Config -->
     <script>
@@ -48,85 +48,72 @@
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; overflow-x: hidden; }
         .gradient-text { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* ===== Brand Logo ===== */
+        /* ===== Brand Wordmark ===== */
         .garaj-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            letter-spacing: 0.32em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            letter-spacing: 0.18em;
             color: #0f172a;
             display: inline-flex;
             align-items: center;
             line-height: 1;
+            position: relative;
+            padding-bottom: 2px;
         }
         .garaj-logo .accent {
             background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: 700;
+            font-weight: 900;
+            display: inline-block;
+            transform: translateY(-1px);
         }
+        .garaj-logo::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 28%;
+            bottom: -3px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f97316 30%, #fbbf24 80%, transparent);
+            border-radius: 2px;
+            opacity: 0.85;
+        }
+        
         .garaj-logo-footer {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: 0.32em;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 0.18em;
             color: #ffffff;
             display: inline-flex;
             align-items: center;
             line-height: 1;
+            position: relative;
+            padding-bottom: 2px;
         }
         .garaj-logo-footer .accent {
-            background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
+            background: linear-gradient(135deg, #fb923c 0%, #fbbf24 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            display: inline-block;
+            transform: translateY(-1px);
         }
-        
-        /* Logo mark - layered diamond emblem */
-        .logo-mark {
-            position: relative;
-            width: 44px;
-            height: 44px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            border-radius: 12px;
-            box-shadow: 
-                0 8px 20px -8px rgba(249, 115, 22, 0.45),
-                inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .logo-mark::before {
+        .garaj-logo-footer::after {
             content: '';
             position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.4) 0%, transparent 60%);
-            opacity: 0.8;
+            left: 0;
+            right: 28%;
+            bottom: -3px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f97316 30%, #fbbf24 80%, transparent);
+            border-radius: 2px;
+            opacity: 0.9;
         }
-        .logo-mark::after {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            right: -1px;
-            bottom: -1px;
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.5), transparent 40%, transparent 60%, rgba(251, 191, 36, 0.3));
-            border-radius: 13px;
-            z-index: -1;
-        }
-        .logo-mark svg {
-            position: relative;
-            z-index: 1;
-        }
-        .logo-mark-sm {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-        }
-        .logo-mark-sm::after { border-radius: 11px; }
         
         /* Device Mockups CSS */
         .phone-mockup {
@@ -197,23 +184,12 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#" class="flex items-center gap-3 group">
-                    <span class="logo-mark">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Stylized G with wrench cut-out -->
-                            <path d="M12 3a9 9 0 1 0 7.25 14.35l-2.3-2.3A5.75 5.75 0 1 1 17.75 12H12v3h8.75A9 9 0 0 0 12 3z" fill="url(#lg1)"/>
-                            <circle cx="18.5" cy="18.5" r="1.5" fill="#fbbf24"/>
-                            <defs>
-                                <linearGradient id="lg1" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                                    <stop offset="0" stop-color="#fb923c"/>
-                                    <stop offset="0.5" stop-color="#f97316"/>
-                                    <stop offset="1" stop-color="#ea580c"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </span>
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center shadow-lg shadow-brand-500/30">
+                        <i data-lucide="wrench" class="w-5 h-5 text-white"></i>
+                    </div>
                     <span class="garaj-logo">G<span class="accent">A</span>R<span class="accent">A</span>J</span>
-                </a>
+                </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#features" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">Features</a>
                     <a href="#workflow" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">Workflow</a>
@@ -648,18 +624,6 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="garaj-shop-type" class="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-2">Shop Type</label>
-                            <select id="garaj-shop-type" name="shop_type"
-                                class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-900 focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 transition-all appearance-none cursor-pointer">
-                                <option>Mechanic Shop</option>
-                                <option>Tire Center</option>
-                                <option>Auto Body</option>
-                                <option>Inspection Station</option>
-                                <option>Other / Multi-service</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-6">
                             <label for="garaj-message" class="block text-xs font-bold text-slate-700 uppercase tracking-widest mb-2">Message</label>
                             <textarea id="garaj-message" name="message" required rows="5" placeholder="Tell us about your shop and what you'd like G A R A J to help with..."
                                 class="w-full px-4 py-3 bg-slate-50 border-2 border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-500/10 transition-all resize-none"></textarea>
@@ -701,20 +665,10 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <span class="logo-mark logo-mark-sm">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 3a9 9 0 1 0 7.25 14.35l-2.3-2.3A5.75 5.75 0 1 1 17.75 12H12v3h8.75A9 9 0 0 0 12 3z" fill="url(#lg2)"/>
-                        <circle cx="18.5" cy="18.5" r="1.5" fill="#fbbf24"/>
-                        <defs>
-                            <linearGradient id="lg2" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
-                                <stop offset="0" stop-color="#fb923c"/>
-                                <stop offset="0.5" stop-color="#f97316"/>
-                                <stop offset="1" stop-color="#ea580c"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </span>
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center">
+                    <i data-lucide="wrench" class="w-4 h-4 text-white"></i>
+                </div>
                 <span class="garaj-logo-footer">G<span class="accent">A</span>R<span class="accent">A</span>J</span>
             </div>
             <div class="text-sm font-medium">
