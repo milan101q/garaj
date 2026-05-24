@@ -1,192 +1,462 @@
-<!--
-=========================================================
-DEFAULT WEB PAGE - THIS FILE CANNOT BE EDITED
-COPYRIGHT INFINITYFREE
-=========================================================
-
-This default web page is protected against modifications.
-
-To upload your own site, please delete this file and
-upload your own page as "index.php" or "index.html".
-
-=========================================================
--->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to your InfinityFree website</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400">
-    <link rel="stylesheet" href="https://vpassets.infinityfree.net/welcome2024/style.css">
-    <link rel="icon" href="https://vpassets.infinityfree.net/welcome2024/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="https://vpassets.infinityfree.net/welcome2024/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G A R A J | The Ultimate Auto Shop Management Solution</title>
+    <meta name="description" content="Manage your mechanic shop, tire shop, or auto repair business with G A R A J. Invoicing, vehicle history, automated reports, and customer management in one app.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23f97316'/%3E%3Cg transform='translate(50 50)'%3E%3Cpath d='M-3-22a16 16 0 1 0 19 19l9 9a4 4 0 0 0 6-6l-9-9A16 16 0 0 0-3-22zm0 8a8 8 0 1 1 0 16 8 8 0 0 1 0-16z' fill='white'/%3E%3C/g%3E%3C/svg%3E">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: { 50: '#fff7ed', 100: '#ffedd5', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+                        slate: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 700: '#334155', 800: '#1e293b', 900: '#0f172a' }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; overflow-x: hidden; }
+        .gradient-text { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Device Mockups CSS */
+        .phone-mockup {
+            border-radius: 40px;
+            border: 12px solid #0f172a;
+            background: #ffffff;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+            width: 280px;
+            height: 580px;
+            display: flex;
+            flex-direction: column;
+        }
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 24px;
+            background: #0f172a;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 20;
+        }
+        .status-bar {
+            height: 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #000;
+            flex-shrink: 0;
+        }
+        .bottom-nav {
+            height: 50px;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: #fff;
+            padding-bottom: 5px;
+            flex-shrink: 0;
+        }
+        .app-screenshot {
+            flex: 1;
+            width: 100%;
+            object-fit: contain;
+            background: #fff;
+            min-height: 0;
+        }
+        
+        /* Background Mesh */
+        .bg-mesh {
+            background-color: #0f172a;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(15, 23, 42, 1) 0px, transparent 50%);
+        }
+    </style>
 </head>
-<body>
-    <header class="site-header">
-        <div class="container">
-            <div class="site-header-inner">
-                <div class="brand header-brand">
-                    <h1 class="m-0">
-                        <a href="https://www.infinityfree.com">
-                            <img src="https://vpassets.infinityfree.net/welcome2024/logo-header.png" alt="InfinityFree">
-                        </a>
-                    </h1>
+<body class="antialiased text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center shadow-lg shadow-brand-500/30">
+                        <i data-lucide="wrench" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="font-extrabold text-2xl tracking-tight text-slate-900">G A R A J</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">Features</a>
+                    <a href="#workflow" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">Workflow</a>
+                    <a href="#reports" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">Reports</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-brand-500 transition-colors">Pricing</a>
+                </div>
+                <div>
+                    <a href="https://script.google.com/macros/s/AKfycbzp1JVYj8Rj4lG2p6G1wwG2FLYs1cT37c75bC2uiOH6PxgYHVAjpzT4VjzgGYIGEqmQBg/exec" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-brand-500 text-white px-6 py-3 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-brand-500/25 transform hover:-translate-y-0.5 inline-block">Try It First</a>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-inner">
-                    <div class="hero-copy">
-                        <h1 class="hero-title h2-mobile mt-0">
-                            Your domain
-                            <br /> is ready!
-                        </h1>
-                        <p class="hero-paragraph">
-                            This page is loaded from the directory <strong class="path-var">"ppi.is-best.net/htdocs"</strong> of your InfinityFree hosting account. So you are ready to set up your website!
-                        </p>
-                        <p class="hero-cta">
-                            <a class="button button-primary button-shadow" href="https://forum.infinityfree.com/docs?topic=49312" target="_blank">
-                                Open Getting Started Guide
-                            </a>
-                        </p>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-mesh overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <!-- Hero Copy -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 backdrop-blur-sm mb-6">
+                        <span class="flex h-2 w-2 rounded-full bg-brand-500"></span>
+                        <span class="text-xs font-semibold text-slate-300 uppercase tracking-wider">The OS for Modern Auto Shops</span>
                     </div>
-                    <div class="hero-illustration">
-                        <img src="https://vpassets.infinityfree.net/welcome2024/hero-illustration.svg" alt="Illustration">
+                    <h1 class="text-5xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] mb-6">
+                        Stop turning paper.<br>
+                        <span class="bg-gradient-to-r from-brand-500 to-amber-400 gradient-text">Start turning wrenches.</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto font-medium leading-relaxed">
+                        G A R A J is the all-in-one web app built for mechanics, tire shops, and auto repair businesses. Send SMS alerts to customers, track the complete history of all vehicles and clients, and log every job seamlessly. No need to hunt down old invoices to see what was done before.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://script.google.com/macros/s/AKfycbzp1JVYj8Rj4lG2p6G1wwG2FLYs1cT37c75bC2uiOH6PxgYHVAjpzT4VjzgGYIGEqmQBg/exec" target="_blank" rel="noopener noreferrer" class="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-[0_0_40px_rgba(249,115,22,0.4)] flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                            Get Started Now <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#features" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white px-8 py-4 rounded-full text-lg font-bold transition-all flex items-center justify-center gap-2">
+                            Explore Features
+                        </a>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features section text-center">
-            <div class="section-square"></div>
-            <div class="container">
-                <div class="features-inner section-inner">
-                    <div class="features-wrap">
-                        <div class="feature">
-                            <div class="feature-inner">
-                                <h4 class="feature-title h3-mobile">1. Find website folder</h4>
-                                <p class="text-sm">
-                                    You can find the website of this domain name in the directory <strong class="path-var">"ppi.is-best.net/htdocs"</strong> on your account.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-inner">
-                                <h4 class="feature-title h3-mobile">2. Upload an index file</h4>
-                                <p class="text-sm">
-                                    In your website directory, upload a file with the name <strong>index.php</strong> or <strong>index.html</strong> to act as the home page.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="feature">
-                            <div class="feature-inner">
-                                <h4 class="feature-title h3-mobile">3. Delete index2.html</h4>
-                                <p class="text-sm">
-                                    When your own website is set up, you can delete this file, called <strong>index2.html</strong>, from your website folder.
-                                </p>
-                            </div>
-                        </div>
+                    
+                    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-slate-400 text-sm font-medium">
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500"></i> No monthly subscription</div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500"></i> No hidden fees</div>
+                        <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500"></i> No remote setup or training required</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="pricing section">
-            <div class="section-square"></div>
-            <div class="container">
-                <div class="pricing-inner section-inner has-top-divider">
-                    <h2 class="section-title mt-0 text-center">How to build a website</h2>
-                    <div class="pricing-tables-wrap">
-                        <div class="pricing-table">
-                            <div class="pricing-table-inner">
-                                <div class="pricing-table-main">
-                                    <h4 class="feature-title h3-mobile">Site.Pro Builder</h4>
-                                    <p class="text-sm">
-                                        Use the Site.pro website builder, included with InfinityFree, to build anything from simple landing pages to fully featured online stores.
-                                        All fully SEO optimized, completely mobile friendly and available in many languages.
-                                    </p>
-                                </div>
-                                <div class="pricing-table-cta">
-                                    <a class="button button-primary button-shadow button-block" href="https://forum.infinityfree.com/docs?topic=94339" target="_blank">
-                                        Learn about Site.Pro
-                                    </a>
-                                </div>
+    <!-- Logo Cloud / Trust -->
+    <section class="py-10 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">Built for all automotive repair businesses</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60">
+                <div class="flex items-center gap-2 font-black text-xl text-slate-800"><i data-lucide="wrench"></i> Mechanic Shops</div>
+                <div class="flex items-center gap-2 font-black text-xl text-slate-800"><i data-lucide="circle-dashed"></i> Tire Centers</div>
+                <div class="flex items-center gap-2 font-black text-xl text-slate-800"><i data-lucide="car"></i> Auto Body</div>
+                <div class="flex items-center gap-2 font-black text-xl text-slate-800"><i data-lucide="search-check"></i> Inspection Stations</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Grid -->
+    <section id="features" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-500 font-bold tracking-wide uppercase text-sm mb-2">Everything You Need</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">Run your shop like a Fortune 500 company.</h3>
+                <p class="text-lg text-slate-600">G A R A J replaces your messy whiteboards, lost paper invoices, and confusing spreadsheets with one sleek interface.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="history" class="w-7 h-7 text-brand-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Complete Service History</h4>
+                    <p class="text-slate-600">Access the full history of all vehicles and customers. See exactly what was done previously without digging through file cabinets or old invoices.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="ban" class="w-7 h-7 text-brand-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">No Subscriptions or Fees</h4>
+                    <p class="text-slate-600">Pay once and use it. Absolutely no monthly subscriptions, no hidden fees, and no surprise charges to eat into your shop's profits.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="zap" class="w-7 h-7 text-brand-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Instant Setup</h4>
+                    <p class="text-slate-600">Built to be so intuitive that your team can start immediately. No remote setup, complicated installations, or training sessions required.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-text" class="w-7 h-7 text-brand-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Premium PDF Invoices</h4>
+                    <p class="text-slate-600">Generate stunning, itemized invoices in one click. Auto-calculate parts tax and save directly to Google Drive.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="mail" class="w-7 h-7 text-brand-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Automated Reports</h4>
+                    <p class="text-slate-600">Wake up to automated daily and monthly financial reports sent straight to your email inbox. No manual math required.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="smartphone" class="w-7 h-7 text-brand-500"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">WhatsApp & SMS Ready</h4>
+                    <p class="text-slate-600">When a car is done, G A R A J generates a pre-filled text or WhatsApp message with the total cost. Just tap send.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: Mobile -->
+    <section id="workflow" class="py-24 bg-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Mobile Mockup -->
+                <div class="flex justify-center relative animate-float-delayed order-2 lg:order-1">
+                    <!-- Blob background -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-brand-200/50 rounded-full blur-3xl -z-10"></div>
+                    
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1.5">
+                                <i data-lucide="signal" class="w-3 h-3"></i>
+                                <i data-lucide="wifi" class="w-3 h-3"></i>
+                                <i data-lucide="battery" class="w-3 h-3"></i>
                             </div>
                         </div>
-                        <div class="pricing-table">
-                            <div class="pricing-table-inner">
-                                <div class="pricing-table-main">
-                                    <h4 class="feature-title h3-mobile">Softaculous Installer</h4>
-                                    <p class="text-sm">
-                                        Use the Softaculous automatic script installer to install one of over 400 scripts, applications and CMS like WordPress with only a few clicks, and automatically keep them up to date.
-                                    </p>
-                                </div>
-                                <div class="pricing-table-cta">
-                                    <a class="button button-primary button-shadow button-block" href="https://forum.infinityfree.com/docs?topic=49314" target="_blank">
-                                        Learn about Softaculous
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pricing-table">
-                            <div class="pricing-table-inner">
-                                <div class="pricing-table-main">
-                                    <h4 class="feature-title h3-mobile">Upload your own</h4>
-                                    <p class="text-sm">
-                                        Migrate your existing website from your previous hosting provider, or build your own website using the tools of your choice! With PHP and MySQL support, you can build almost anything.
-                                    </p>
-                                </div>
-                                <div class="pricing-table-cta">
-                                    <a class="button button-primary button-shadow button-block" href="https://forum.infinityfree.com/docs?topic=49306">
-                                        Learn about Uploading
-                                    </a>
-                                </div>
-                            </div>
+                        <img src="https://ppi.is-best.net/pictures/prepurchaseinspectionwebapp/unnamed.jpg" alt="G A R A J Mobile App Dashboard" class="app-screenshot">
+                        <div class="bottom-nav">
+                            <i data-lucide="layout-grid" class="w-5 h-5 text-orange-500"></i>
+                            <i data-lucide="search" class="w-5 h-5 text-slate-400"></i>
+                            <i data-lucide="plus-circle" class="w-5 h-5 text-slate-400"></i>
+                            <i data-lucide="settings" class="w-5 h-5 text-slate-400"></i>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer class="site-footer text-light">
-        <div class="container">
-            <div class="site-footer-inner has-top-divider">
-                <div class="brand footer-brand">
-                    <a href="https://www.infinityfree.com">
-                        <img src="https://vpassets.infinityfree.net/welcome2024/logo-footer.png" alt="InfinityFree">
+                <!-- Text Content -->
+                <div class="order-1 lg:order-2">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 tracking-tight">100% Mobile Optimized. Take the shop in your pocket.</h2>
+                    <p class="text-lg text-slate-600 mb-6">
+                        You're constantly moving around the bays, talking to customers, and checking parts. G A R A J is built to work flawlessly on your smartphone.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-500 mt-1 flex-shrink-0"></i>
+                            <span class="text-slate-700 font-medium">Add new jobs and track progress directly on your phone.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-500 mt-1 flex-shrink-0"></i>
+                            <span class="text-slate-700 font-medium">Log quick expenses from the parts store while standing in line.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-brand-500 mt-1 flex-shrink-0"></i>
+                            <span class="text-slate-700 font-medium">Look up a customer's lifetime value instantly from the driveway.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: Financials -->
+    <section id="reports" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Text Content -->
+                <div>
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 border border-emerald-500/30">
+                        <i data-lucide="pie-chart" class="w-6 h-6 text-emerald-400"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-6 tracking-tight">Know exactly where your money is going.</h2>
+                    <p class="text-lg text-slate-300 mb-6">
+                        Stop guessing your margins. G A R A J separates your revenue from your internal parts costs to give you real, actionable profit numbers.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-10">
+                        <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 backdrop-blur-sm">
+                            <div class="text-4xl font-black text-emerald-400 mb-2">$8,240</div>
+                            <div class="text-sm font-bold text-slate-400 uppercase tracking-widest">Gross Revenue</div>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700 backdrop-blur-sm">
+                            <div class="text-4xl font-black text-brand-500 mb-2">48.2%</div>
+                            <div class="text-sm font-bold text-slate-400 uppercase tracking-widest">Parts Margin</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic -->
+                <div class="relative bg-slate-800 border border-slate-700 rounded-3xl p-6 shadow-2xl">
+                    <div class="flex justify-between items-center border-b border-slate-700 pb-4 mb-6">
+                        <h4 class="font-bold text-white flex items-center gap-2"><i data-lucide="mail" class="w-5 h-5 text-brand-500"></i> Automated Reports</h4>
+                        <div class="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-1 rounded font-bold">Active</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-slate-700/50 rounded-xl">
+                            <div>
+                                <div class="font-bold text-white text-sm">Daily Financial Digest</div>
+                                <div class="text-xs text-slate-400 mt-1">Sends every day at 9:00 PM</div>
+                            </div>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-slate-700/50 rounded-xl">
+                            <div>
+                                <div class="font-bold text-white text-sm">Monthly P&L Summary</div>
+                                <div class="text-xs text-slate-400 mt-1">Sends on the 1st of every month</div>
+                            </div>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-slate-700">
+                        <p class="text-sm text-slate-400 italic">"I wake up, check my phone, and know exactly how much the shop made yesterday without opening a spreadsheet."</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-brand-50 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-200/40 rounded-full blur-3xl -z-0"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-200/40 rounded-full blur-3xl -z-0"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-12">
+                <h2 class="text-brand-500 font-bold tracking-wide uppercase text-sm mb-2">Simple, Honest Pricing</h2>
+                <h3 class="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tight">One price. One time. Yours forever.</h3>
+                <p class="text-lg text-slate-600">No subscriptions, no surprises. Pay once and own the platform.</p>
+            </div>
+
+            <div class="max-w-lg mx-auto bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
+                <!-- Header -->
+                <div class="bg-slate-900 text-white p-8 text-center relative">
+                    <div class="absolute top-4 right-4 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">One-Time</div>
+                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">G A R A J Complete</p>
+                    <div class="flex items-start justify-center gap-1">
+                        <span class="text-3xl font-bold mt-3">$</span>
+                        <span class="text-7xl font-black tracking-tight">799</span>
+                    </div>
+                    <p class="text-slate-400 font-medium mt-2">Pay once. Use forever.</p>
+                </div>
+
+                <!-- Features -->
+                <div class="p-8">
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
+                            </div>
+                            <span class="text-slate-700 font-semibold">No monthly subscription</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
+                            </div>
+                            <span class="text-slate-700 font-semibold">No hidden fees</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
+                            </div>
+                            <span class="text-slate-700 font-semibold">No remote setup or training required</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
+                            </div>
+                            <span class="text-slate-700 font-semibold">One-time purchase</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://script.google.com/macros/s/AKfycbzp1JVYj8Rj4lG2p6G1wwG2FLYs1cT37c75bC2uiOH6PxgYHVAjpzT4VjzgGYIGEqmQBg/exec" target="_blank" rel="noopener noreferrer" class="block w-full bg-brand-500 hover:bg-brand-600 text-white text-center px-8 py-4 rounded-full text-lg font-bold transition-all shadow-[0_10px_30px_rgba(249,115,22,0.3)] transform hover:-translate-y-0.5">
+                        Try it First
                     </a>
                 </div>
-                <ul class="footer-links list-reset">
-                    <li>
-                        <a href="https://dash.infinityfree.com/login">Client Area</a>
-                    </li>
-                    <li>
-                        <a href="https://forum.infinityfree.com/docs">Knowledge Base</a>
-                    </li>
-                    <li>
-                        <a href="https://forum.infinityfree.com/">Community Forum</a>
-                    </li>
-                </ul>
-                <ul class="footer-secondary-links list-reset">
-                    <li>
-                        <a href="https://www.infinityfree.com">
-                            Create your own completely free web hosting account with InfinityFree!
-                        </a>
-                    </li>
-                </ul>
-                <div class="footer-copyright">
-                    Copyright &copy; InfinityFree, All rights reserved
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center">
+                    <i data-lucide="wrench" class="w-4 h-4 text-white"></i>
                 </div>
+                <span class="font-extrabold text-xl tracking-tight text-white">G A R A J</span>
+            </div>
+            <div class="text-sm font-medium">
+                &copy; 2026 G A R A J 🔧. All rights reserved.
+            </div>
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </footer>
+
+    <!-- Initialize Icons & Scroll Effects -->
+    <script>
+        lucide.createIcons();
+
+        // Navbar blur effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-sm');
+                nav.classList.replace('bg-white/80', 'bg-white/95');
+            } else {
+                nav.classList.remove('shadow-sm');
+                nav.classList.replace('bg-white/95', 'bg-white/80');
+            }
+        });
+    </script>
 </body>
 </html>
